@@ -4,14 +4,12 @@ import "moment/dist/locale/sr";
 import { summer } from "./data/Summer/busScheduleSummer";
 import { getTodayType } from "./utilFn/getDayType";
 import { getDepartures } from "./utilFn/getDepartures";
-import { checkIfInOneHour } from "./utilFn/checkIfIsInOneHours";
-import { getRainChance } from "./utilFn/getWeatherData";
+
 function App() {
   moment.locale("sr");
-  let allBussesData = summer[getTodayType()];
-  let todaysDay = moment().format("dddd");
-  let getDateType = todaysDay.charAt(0).toUpperCase() + todaysDay.slice(1);
-  getRainChance("Novi Sad").then(console.log);
+  const allBussesData = summer[getTodayType()];
+  const todaysDay = moment().format("dddd");
+  const getDateType = todaysDay.charAt(0).toUpperCase() + todaysDay.slice(1);
 
   return (
     <div className="app-wrapper">
@@ -20,7 +18,7 @@ function App() {
       <div className="departures">
         {getDepartures(allBussesData).map((departure) => {
           return (
-            <div className="departure" key={departure}>
+            <div className="departure" key={departure.time}>
               <span style={{ fontWeight: "bold" }}>{departure.bus}</span>
               <span>{departure.time}</span>
             </div>

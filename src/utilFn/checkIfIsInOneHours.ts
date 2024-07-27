@@ -1,5 +1,5 @@
 import moment from "moment";
-export const checkIfInOneHour = (departure) => {
+export const checkIfInOneHour = (departure: string) => {
   const now = moment();
   const timeToday = moment(departure, "HH:mm").set({
     year: now.year(),

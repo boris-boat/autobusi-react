@@ -1,12 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { checkIfInOneHour } from "./checkIfIsInOneHours";
-import moment from "moment";
-export const getDepartures = (allBussesData) => {
-  let filteredDepartures = [];
-  let allBusses = Object.entries(allBussesData);
-  allBusses.forEach((bus) => {
+export const getDepartures = (allBussesData: any) => {
+  const filteredDepartures: { bus: string; time: string }[] = [];
+  const allBusses = Object.entries(allBussesData);
+  allBusses.forEach((bus: any) => {
     const tmp = bus[1].starts
-      .filter((departure) => checkIfInOneHour(departure))
-      .map((departure) => {
+      .filter((departure: string) => checkIfInOneHour(departure))
+      .map((departure: string) => {
         return {
           bus: bus[0],
           time: departure,
