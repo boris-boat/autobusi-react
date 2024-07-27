@@ -1,4 +1,4 @@
-const apiKey = "001ff9aa3e1fab7d413ea230dac33aa2"; // Replace with your OpenWeatherMap API key
+const apiKey = "to-add";
 
 export const getRainChance = async (city: string) => {
   const response = await fetch(
