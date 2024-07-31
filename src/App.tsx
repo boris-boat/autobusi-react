@@ -32,23 +32,23 @@ function App() {
     <div className="app-wrapper">
       <div className="date">{moment().format("lll")}</div>
       <div className="second-row">
-        <button
-          className={isSelected(5) ? "is-selected" : ""}
+        <div
+          className={`button ${isSelected(5) ? "is-selected" : ""}`}
           onClick={() => {
             setBusTypeSelected((prev) => ({ ...prev, 5: !prev[5] }));
           }}
         >
           5*
-        </button>
+        </div>
         <div className="date-type">{getDateType}</div>
-        <button
-          className={isSelected(7) ? "is-selected" : ""}
+        <div
+          className={`button ${isSelected(7) ? "is-selected" : ""}`}
           onClick={() => {
             setBusTypeSelected((prev) => ({ ...prev, 7: !prev[7] }));
           }}
         >
           7*
-        </button>
+        </div>
       </div>
       <div className="departures">
         {filterFn(getDepartures(allBussesData)).map((departure) => {

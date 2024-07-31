@@ -17,8 +17,13 @@ body {
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
-      button {
+      .button {
+        background-color: yellow;
         width: 5rem;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         &.is-selected {
           border: 1px solid red;
         }
