@@ -13,12 +13,22 @@ body {
       width: 100%;
       text-align: center;
     }
-    .date-type {
-      padding: 15px;
-      font: 2rem sans-serif;
-      width: 100%;
-      text-align: center;
-      padding-top: 0;
+    .second-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      button {
+        width: 5rem;
+        &.is-selected {
+          border: 1px solid red;
+        }
+      }
+      .date-type {
+        padding: 15px;
+        font: 2rem sans-serif;
+        text-align: center;
+        padding-top: 0;
+      }
     }
 
     .departures {
