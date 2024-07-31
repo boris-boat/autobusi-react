@@ -25,7 +25,7 @@ body {
         justify-content: center;
         align-items: center;
         &.is-selected {
-          border: 1px solid red;
+          border: 2px dashed red;
         }
       }
       .date-type {
